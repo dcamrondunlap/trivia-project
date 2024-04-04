@@ -13,7 +13,7 @@ function TriviaForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get('api/trivia/questions', {
+      const response = await axios.get('http://localhost:9002/api/trivia/questions', {
         params: {
           amount: numberOfQuestions,
           category,
@@ -21,8 +21,9 @@ function TriviaForm() {
           type
         }
       });
-      navigate('./questions.jsx')
       console.log('Fetched trivia questions:', response.data);
+      navigate('/quiz', {state: {quizData: response.data}})
+      console.log('Navigated to questions page with quiz data:', response.data);
     } catch (error) {
       console.error('Error fetching trivia questions', error);
     }
@@ -90,7 +91,7 @@ function TriviaForm() {
             onChange={(e) => setDifficulty(e.target.value)}
             className="select select-bordered w-full max-w-xs"
           >
-            <option disabled selected>Choose a difficulty</option>
+            <option disabled value=''>Choose a difficulty</option>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
@@ -106,7 +107,7 @@ function TriviaForm() {
             onChange={(e) => setType(e.target.value)}
             className="select select-bordered w-full max-w-xs"
           >
-            <option disabled selected>Choose a type</option>
+            <option disabled value=''>Choose a type</option>
             <option value="multiple">Multiple Choice</option>
             <option value="boolean">True/False</option>
           </select>

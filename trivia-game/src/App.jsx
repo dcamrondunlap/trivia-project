@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import TriviaForm from './components/triviaForm';
+import Questions from './components/questions';
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<TriviaForm />} />
-        {/* <Route path="/questions" element={<Questions />} /> */}
+        <Route path="/quiz" element={<Questions />} />
       </Routes>
     </Router>
   )

@@ -30,8 +30,9 @@ function TriviaForm() {
   }
 
   return (
-    <div className="p-4 bg-gray-100 rounded-md">
-      <h2 className="text-lg font-semibold mb-4">Create your Game!</h2>
+    <div className='flex items-center justify-center h-screen'>
+      <div className="p-4 bg-gray-300 rounded-md">
+      <h2 className="text-xl font-semibold mb-4">Create your Game!</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <label className="form-control w-full max-w-xs">
           <div className="label">
@@ -117,6 +118,7 @@ function TriviaForm() {
           Start!
         </button>
       </form>
+    </div>
     </div>
   );
 }

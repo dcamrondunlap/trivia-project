@@ -49,15 +49,15 @@ function Questions() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-4">Here's your Quiz</h1>
+    <div className="container mx-auto px-4 py-8 flex flex-col items-center justify-center">
+      <h1 className="text-2xl font-bold mb-4">Here's your Quiz!</h1>
       {!quizCompleted && quizData && quizData.results && quizData.results.length > 0 && (
         <div className="mb-6">
           <h3 className="text-lg font-semibold mb-2" dangerouslySetInnerHTML={{__html: quizData.results[currentQuestionIndex].question}}></h3>
           <ol className="list-decimal ml-6">
             {shuffleArray([...quizData.results[currentQuestionIndex].incorrect_answers, quizData.results[currentQuestionIndex].correct_answer]).map((option, optionIndex) => (
               <li key={optionIndex} className="mb-2">
-                <button className="btn btn-ghost" onClick={() => handleAnswerSelected(option === quizData.results[currentQuestionIndex].correct_answer)}>{option.replace(/quot;/g, '"').replace(/&#039;/g, "'")}</button>
+                <button className="btn btn-ghost" onClick={() => handleAnswerSelected(option === quizData.results[currentQuestionIndex].correct_answer)} dangerouslySetInnerHTML={{__html: option.replace(/quot;/g, '"').replace(/&#039;/g, "'")}}></button>
               </li>
             ))}
           </ol>

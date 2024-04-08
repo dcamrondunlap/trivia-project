@@ -5,12 +5,10 @@ import React from 'react'
 
 function Score({score, totalQuestions}) {
   return (
-    <div>
-      <h2>Your score: {score}/{totalQuestions}</h2>
+    <div className='text-bold'>
+      <h2 className='text-bold'>Your score: {score}/{totalQuestions}</h2>
     </div>
   )
 }
 
 export default Score
-
-

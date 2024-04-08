@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Router>
-      <div className="flex justify-center items-center h-screen">
+      <div className="">
         <Routes>
           <Route path="/" element={<TriviaForm />} />
           <Route path="/quiz" element={<Questions />} />

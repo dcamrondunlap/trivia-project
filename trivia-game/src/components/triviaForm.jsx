@@ -30,27 +30,27 @@ function TriviaForm() {
   }
 
   return (
-    <div className='absolute inset-0 flex justify-center items-center'>
-      <div className="p-6 bg-gray-300 rounded-xl max-w-sm">
-        <h2 className="text-xl font-semibold mb-4 text-center">Create your Game!</h2>
+    <div className='absolute inset-0 flex justify-center items-center bg-[#071330]'>
+      <div className="p-6 bg-[#0C4160] rounded-xl max-w-md">
+        <h2 className="text-xl font-semibold mb-4 text-center text-[#C3CEDA]">Create your Game!</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <label className="block">
-            <span className="block text-lg text-center">Number of Questions</span>
+            <span className="block text-lg text-center text-[#C3CEDA]">Number of Questions</span>
             <input
               type="number"
               value={numberOfQuestions}
               onChange={(e) => setNumberOfQuestions(e.target.value)}
-              className="block w-full border border-gray-400 rounded-md px-4 py-2"
+              className="block w-full border bg-[#738FA7] rounded-md px-4 py-2"
               max={50}
             />
           </label>
 
           <label className="block">
-            <span className="block text-lg text-center">Category</span>
+            <span className="block text-lg text-center text-[#C3CEDA]">Category</span>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="block w-full border border-gray-400 rounded-md px-4 py-2"
+              className="block w-full border bg-[#738FA7] rounded-md px-4 py-2"
             >
               <option disabled value=''>Choose a category</option>
               <option value="9">General Knowledge</option>
@@ -81,11 +81,11 @@ function TriviaForm() {
           </label>
 
           <label className="block">
-            <span className="block text-lg text-center">Difficulty</span>
+            <span className="block text-lg text-center text-[#C3CEDA]">Difficulty</span>
             <select
               value={difficulty}
               onChange={(e) => setDifficulty(e.target.value)}
-              className="block w-full border border-gray-400 rounded-md px-4 py-2"
+              className="block w-full border bg-[#738FA7] rounded-md px-4 py-2"
             >
               <option disabled value=''>Choose a difficulty</option>
               <option value="easy">Easy</option>
@@ -95,11 +95,11 @@ function TriviaForm() {
           </label>
 
           <label className="block">
-            <span className="block text-lg text-center">Type</span>
+            <span className="block text-lg text-center text-[#C3CEDA]">Type</span>
             <select
               value={type}
               onChange={(e) => setType(e.target.value)}
-              className="block w-full border border-gray-400 rounded-md px-4 py-2"
+              className="block w-full border bg-[#738FA7] rounded-md px-4 py-2"
             >
               <option disabled value=''>Choose a type</option>
               <option value="multiple">Multiple Choice</option>
@@ -107,7 +107,7 @@ function TriviaForm() {
             </select>
           </label>
 
-          <button type="submit" className="btn btn-primary block mx-auto">
+          <button type="submit" className="btn bg-[#738FA7] block mx-auto">
             Start!
           </button>
         </form>

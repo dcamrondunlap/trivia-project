@@ -108,7 +108,7 @@ function TriviaForm() {
           </label>
 
           <button type="submit"
-          // className="btn bg-[#738FA7] block mx-auto px-6 rounded-md"
+          className="btn bg-[#738FA7] block mx-auto px-6 rounded-md"
           >
             Start!
           </button>

@@ -4,18 +4,18 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 
+
 function TriviaForm() {
   const [numberOfQuestions, setNumberOfQuestions] = useState('');
   const [category, setCategory] = useState('');
   const [difficulty, setDifficulty] = useState('');
   const [type, setType] = useState('');
   const navigate = useNavigate();
-  const apiEndpoint = import.meta.env.REACT_APP_API_ENDPOINT
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get(apiEndpoint, {
+      const response = await axios.get('http://localhost:9002/api/trivia/questions', {
         params: {
           amount: numberOfQuestions,
           category,
@@ -24,12 +24,12 @@ function TriviaForm() {
         }
       });
       console.log('Fetched trivia questions:', response.data);
-      navigate('/quiz', {state: {quizData: response.data}})
+      navigate('/quiz', { state: { quizData: response.data } });
       console.log('Navigated to questions page with quiz data:', response.data);
     } catch (error) {
       console.error('Error fetching trivia questions', error);
     }
-  }
+  };
 
   return (
     <div className='absolute inset-0 flex justify-center items-center bg-[#071330]'>
@@ -111,6 +111,7 @@ function TriviaForm() {
 
           <button type="submit"
           className="btn bg-[#738FA7] block mx-auto px-6 rounded-md"
+          onClick={handleSubmit}
           >
             Start!
           </button>

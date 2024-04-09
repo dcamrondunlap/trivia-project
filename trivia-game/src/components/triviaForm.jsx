@@ -108,8 +108,8 @@ function TriviaForm() {
           </label>
 
           <button type="submit"
-          className="btn bg-[#738FA7] block mx-auto px-6 rounded-md"
-          onTouchStart={() => handleSubmit(event)}>
+          // className="btn bg-[#738FA7] block mx-auto px-6 rounded-md"
+          >
             Start!
           </button>
         </form>

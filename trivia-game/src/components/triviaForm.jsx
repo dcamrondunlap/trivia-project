@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -9,11 +10,12 @@ function TriviaForm() {
   const [difficulty, setDifficulty] = useState('');
   const [type, setType] = useState('');
   const navigate = useNavigate();
+  const apiEndpoint = import.meta.env.REACT_APP_API_ENDPOINT
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get('http://localhost:9002/api/trivia/questions', {
+      const response = await axios.get(apiEndpoint, {
         params: {
           amount: numberOfQuestions,
           category,

@@ -34,8 +34,8 @@ function TriviaForm() {
       <div className="p-6 bg-[#0C4160] rounded-xl max-w-md">
         <h2 className="text-xl font-semibold mb-4 text-center text-[#C3CEDA]">Create your Game!</h2>
         <div className="space-y-4">
-          <label className="block" onClick={handleStartQuiz} style={{ cursor: 'pointer' }}>
-            <span className="block text-lg text-center text-[#C3CEDA]">Start!</span>
+          <label className="block" onClick={handleStartQuiz}>
+            <span className="block text-lg text-center text-[#C3CEDA] ">Start!</span>
           </label>
           <input
             type="number"

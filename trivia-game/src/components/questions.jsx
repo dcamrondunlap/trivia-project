@@ -1,20 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import Score from './score';
 
-function Questions() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const quizData = location.state.quizData
-
+function Questions({ quizData }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [quizCompleted, setQuizCompleted] = useState(false);
-
-  console.log('Location state:', location.state);
-  console.log('Quiz data:', quizData);
 
   const handleAnswerSelected = (isCorrect) => {
     if (isCorrect) {
@@ -32,21 +25,12 @@ function Questions() {
     setCurrentQuestionIndex(0);
     setScore(0);
     setQuizCompleted(false);
-  }
-
-  const handleNextQuestion = () => {
-    if (currentQuestionIndex < quizData.results.length -1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }
-  }
-
-  const handleCreateNewQuiz = () => {
-    navigate('/')
-  }
+  };
 
   const shuffleArray = (array) => {
-    return array.sort(() => Math.random() - 0.5)
-  }
+    return array.sort(() => Math.random() - 0.5);
+  };
+
 
   return (
     <div className='absolute inset-0 flex justify-center items-center bg-[#071330]'>
@@ -74,7 +58,7 @@ function Questions() {
       {quizCompleted && (
         <>
           <button className="btn mr-4 bg-[#738FA7]" onClick={handleStartOver}>Retry Quiz</button>
-          <button className="btn bg-[#738FA7]" onClick={handleCreateNewQuiz}>Start New Quiz</button>
+
         </>
       )}
     </div>
@@ -82,5 +66,9 @@ function Questions() {
 </div>
   );
 }
+
+Questions.propTypes = {
+  quizData: PropTypes.object.isRequired, // Validate that quizData is an object and required
+};
 
 export default Questions

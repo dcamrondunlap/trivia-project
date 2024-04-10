@@ -25,6 +25,8 @@ app.get('/api/trivia/questions', async (req, res) => {
   }
 });
 
+app.get('/api/trivia/questions', (req, res) => res.setEncoding('Express on vercel'))
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)
 })

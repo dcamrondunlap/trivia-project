@@ -33,7 +33,7 @@ function TriviaForm() {
 
   return (
     <div>
-      <h2>Trivia Form</h2>
+      <h2 className='font-bold'>Trivia Form</h2>
       <form onSubmit={handleStartQuiz}>
         <label>
           Number of Questions:

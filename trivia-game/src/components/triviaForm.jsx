@@ -69,7 +69,8 @@ function TriviaForm() {
             <option value="boolean">True/False</option>
           </select>
         </label>
-        <button type="submit">Start Quiz</button>
+        <button type="submit"
+        className='ml-6 mt-5 font-bold'>Start Quiz</button>
       </form>
       {/* Render Questions component if quizData is available */}
       {quizData && <Questions quizData={quizData} />}

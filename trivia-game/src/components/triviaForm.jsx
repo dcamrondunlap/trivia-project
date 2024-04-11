@@ -17,7 +17,7 @@ function TriviaForm() {
   const handleStartQuiz = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get('http://localhost:9002/api/trivia/questions', {
+      const response = await axios.get('https://opentdb.com/api.php', {
         params: {
           amount: numberOfQuestions,
           category,

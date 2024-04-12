@@ -34,15 +34,15 @@ function Questions({ quizData }) {
 
   return (
     <div className='absolute inset-0 flex justify-center items-center bg-[#071330]'>
-  <div className="container mx-auto px-8 py-12 bg-[#0C4160] w-1/2">
-    <h1 className="text-3xl font-bold mb-4 text-center text-[#C3CEDA]">Here's your Quiz!</h1>
+  <div className="container mx-auto px-8 py-12 bg-[#0C4160] w-2/3 min-[375px]:w-full">
+    <h1 className="text-2xl font-bold mb-4 text-center text-[#C3CEDA]">Here's your Quiz!</h1>
     {!quizCompleted && quizData && quizData.results && quizData.results.length > 0 && (
       <div className="mb-6 text-center">
-        <h3 className="text-2xl font-semibold mb-2 text-[#C3CEDA]" dangerouslySetInnerHTML={{__html: quizData.results[currentQuestionIndex].question}}></h3>
+        <h3 className="text-xl font-semibold mb-2 text-[#C3CEDA]" dangerouslySetInnerHTML={{__html: quizData.results[currentQuestionIndex].question}}></h3>
         <ol className="items-center ">
           {shuffleArray([...quizData.results[currentQuestionIndex].incorrect_answers, quizData.results[currentQuestionIndex].correct_answer]).map((option, optionIndex) => (
             <li key={optionIndex} className="mb-2">
-              <button className="btn btn-ghost text-2xl focus:outline-none focus:ring-0 text-[#C3CEDA] hover:bg-[#738FA7]" onClick={() => handleAnswerSelected(option === quizData.results[currentQuestionIndex].correct_answer)} dangerouslySetInnerHTML={{__html: option.replace(/quot;/g, '"').replace(/&#039;/g, "'")}}></button>
+              <button className="btn btn-ghost text-lg focus:outline-none focus:ring-0 text-[#C3CEDA] hover:bg-[#738FA7]" onClick={() => handleAnswerSelected(option === quizData.results[currentQuestionIndex].correct_answer)} dangerouslySetInnerHTML={{__html: option.replace(/quot;/g, '"').replace(/&#039;/g, "'")}}></button>
             </li>
           ))}
         </ol>

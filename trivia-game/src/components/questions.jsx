@@ -27,6 +27,10 @@ function Questions({ quizData }) {
     setQuizCompleted(false);
   };
 
+  const handleStartNewQuiz = () => {
+    window.location.reload();
+  }
+
   const shuffleArray = (array) => {
     return array.sort(() => Math.random() - 0.5);
   };
@@ -57,8 +61,10 @@ function Questions({ quizData }) {
     <div className="flex justify-center">
       {quizCompleted && (
         <>
-          <button className="btn mr-4 bg-[#738FA7]" onClick={handleStartOver}>Retry Quiz</button>
-
+          <button className="btn mr-4 bg-[#071330] text-[#C3CEDA] hover:bg-[#738FA7]" onClick={handleStartOver}>Retry Quiz</button>
+          <button className='btn ml-4 bg-[#071330] text-[#C3CEDA] hover:bg-[#738FA7]' onClick={handleStartNewQuiz}>
+            Start New Quiz
+          </button>
         </>
       )}
     </div>
